@@ -9,14 +9,25 @@ def some_func():
 
 # test
 class Problem(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        clz = cls.__name__
+        print()
+        print(f'Setting up class {clz}...')
+
+    @classmethod
+    def tearDownClass(cls):
+        clz = cls.__name__
+        print(f'Tearing down class {clz}...')
+
     def setUp(self):
         tc_id = self.id()
         print()
-        print('Setting up', tc_id, '...')
+        print(f'Setting up {tc_id}...')
 
     def tearDown(self):
         tc_id = self.id()
-        print('Tearing down', tc_id, '...')
+        print(f'Tearing down {tc_id}...')
 
     def test_one(self):
         self.assertEqual(some_func(), 1)
