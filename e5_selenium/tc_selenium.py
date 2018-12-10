@@ -24,4 +24,3 @@ class PythonOrgSearch(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
-from django.test import SimpleTestCase
